@@ -50,7 +50,7 @@ export default function Demographics() {
         </p>
       </div>
 
-      <div className="grid gap-4 md:grid-cols-2">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
         <Card>
           <CardHeader>
             <CardTitle>Customer Type Distribution</CardTitle>
@@ -110,7 +110,7 @@ export default function Demographics() {
         </Card>
       </div>
 
-      <div className="grid gap-4 md:grid-cols-3">
+      <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
         <Card>
           <CardHeader>
             <CardTitle>Total Customers</CardTitle>

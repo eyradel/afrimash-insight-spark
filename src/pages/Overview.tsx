@@ -86,7 +86,7 @@ export default function Overview() {
         activeFilters={filters}
       />
 
-      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+      <div className="grid grid-cols-2 gap-4 md:grid-cols-2 lg:grid-cols-4">
         <KPICard
           title="Total Customers"
           value={data.rfm.length.toLocaleString()}
@@ -113,7 +113,7 @@ export default function Overview() {
         />
       </div>
 
-      <div className="grid gap-4 md:grid-cols-2">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
         <Card>
           <CardHeader>
             <CardTitle>Customer Segments</CardTitle>
