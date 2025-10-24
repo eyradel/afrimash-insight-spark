@@ -28,7 +28,7 @@ const App = () => (
                 <header className="sticky top-0 z-10 flex h-16 items-center gap-2 sm:gap-4 border-b bg-background px-4 sm:px-6">
                   <SidebarTrigger />
                   <div className="flex-1 min-w-0">
-                    <h1 className="text-base sm:text-lg font-semibold truncate">Afrimash Analytics Hub</h1>
+                    <h1 className="text-base sm:text-lg font-semibold truncate">AgriNova</h1>
                   </div>
                 </header>
                 <main className="flex-1 p-4 sm:p-6">
