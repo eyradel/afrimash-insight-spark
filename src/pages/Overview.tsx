@@ -26,7 +26,7 @@ import {
 const COLORS = ['hsl(var(--chart-1))', 'hsl(var(--chart-2))', 'hsl(var(--chart-3))', 'hsl(var(--chart-4))', 'hsl(var(--chart-5))'];
 
 export default function Overview() {
-  const { data, rawData, loading, filters, setFilters, resetFilters } = useAnalytics();
+  const { data, loading, filters, setFilters } = useAnalytics();
 
   if (loading) {
     return (
@@ -80,10 +80,8 @@ export default function Overview() {
       </div>
 
       <FilterBar 
-        segments={rawData ? Object.keys(rawData.segments) : []} 
+        segments={Object.keys(data.segments)} 
         onFilterChange={setFilters}
-        onReset={resetFilters}
-        activeFilters={filters}
       />
 
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
