@@ -21,7 +21,7 @@ const items = [
 
 export function AppSidebar() {
   return (
-    <Sidebar collapsible="icon">
+    <Sidebar collapsible="icon" className="hidden md:flex">
       <SidebarHeader>
         <div className="flex items-center gap-2 px-4 py-4">
           <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-primary-foreground">
@@ -61,5 +61,31 @@ export function AppSidebar() {
         </SidebarGroup>
       </SidebarContent>
     </Sidebar>
+  );
+}
+
+export function MobileBottomNav() {
+  return (
+    <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-background border-t">
+      <div className="flex items-center justify-around h-16">
+        {items.map((item) => (
+          <NavLink
+            key={item.title}
+            to={item.url}
+            end
+            className={({ isActive }) =>
+              `flex flex-col items-center justify-center flex-1 h-full gap-1 transition-colors ${
+                isActive
+                  ? "text-primary"
+                  : "text-muted-foreground hover:text-foreground"
+              }`
+            }
+          >
+            <item.icon className="h-5 w-5" />
+            <span className="text-xs">{item.title.split(" ")[0]}</span>
+          </NavLink>
+        ))}
+      </div>
+    </nav>
   );
 }
