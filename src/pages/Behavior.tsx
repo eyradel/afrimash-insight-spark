@@ -45,10 +45,10 @@ export default function Behavior() {
   });
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4 sm:space-y-6">
       <div>
-        <h1 className="text-3xl font-bold tracking-tight">Behavior & Retention</h1>
-        <p className="text-muted-foreground">
+        <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">Behavior & Retention</h1>
+        <p className="text-sm sm:text-base text-muted-foreground">
           Customer engagement patterns and cohort analysis
         </p>
       </div>
@@ -117,12 +117,12 @@ export default function Behavior() {
                 name="Monetary"
                 stroke="hsl(var(--muted-foreground))"
                 fontSize={12}
-                label={{ value: 'Monetary (₦ thousands)', angle: -90, position: 'insideLeft' }}
+                label={{ value: 'Monetary (GH₵ thousands)', angle: -90, position: 'insideLeft' }}
               />
               <Tooltip 
                 cursor={{ strokeDasharray: '3 3' }}
                 formatter={(value: any, name: string) => {
-                  if (name === 'Monetary') return [`₦${value}K`, name];
+                  if (name === 'Monetary') return [`GH₵${value}K`, name];
                   return [value, name];
                 }}
                 contentStyle={{

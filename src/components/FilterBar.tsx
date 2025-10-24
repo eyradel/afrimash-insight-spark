@@ -16,15 +16,15 @@ interface FilterBarProps {
 
 export function FilterBar({ segments, onFilterChange }: FilterBarProps) {
   return (
-    <Card className="p-4 mb-6">
-      <div className="flex flex-wrap gap-4 items-center">
+    <Card className="p-3 sm:p-4 mb-6">
+      <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3 sm:gap-4">
         <div className="flex items-center gap-2">
           <Filter className="h-4 w-4 text-muted-foreground" />
           <span className="text-sm font-medium">Filters:</span>
         </div>
         
         <Select onValueChange={(value) => onFilterChange({ segment: value })}>
-          <SelectTrigger className="w-[180px]">
+          <SelectTrigger className="w-full sm:w-[180px]">
             <SelectValue placeholder="All Segments" />
           </SelectTrigger>
           <SelectContent>
@@ -38,7 +38,7 @@ export function FilterBar({ segments, onFilterChange }: FilterBarProps) {
         </Select>
 
         <Select onValueChange={(value) => onFilterChange({ customerType: value })}>
-          <SelectTrigger className="w-[180px]">
+          <SelectTrigger className="w-full sm:w-[180px]">
             <SelectValue placeholder="Customer Type" />
           </SelectTrigger>
           <SelectContent>
@@ -48,12 +48,12 @@ export function FilterBar({ segments, onFilterChange }: FilterBarProps) {
           </SelectContent>
         </Select>
 
-        <Button variant="outline" size="sm">
+        <Button variant="outline" size="sm" className="w-full sm:w-auto">
           <Calendar className="h-4 w-4 mr-2" />
           Date Range
         </Button>
 
-        <Button variant="ghost" size="sm" className="ml-auto">
+        <Button variant="ghost" size="sm" className="w-full sm:w-auto sm:ml-auto">
           Reset Filters
         </Button>
       </div>

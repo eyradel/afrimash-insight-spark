@@ -71,10 +71,10 @@ export default function Overview() {
     .slice(-12);
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4 sm:space-y-6">
       <div>
-        <h1 className="text-3xl font-bold tracking-tight">Overview</h1>
-        <p className="text-muted-foreground">
+        <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">Overview</h1>
+        <p className="text-sm sm:text-base text-muted-foreground">
           Comprehensive view of your customer analytics
         </p>
       </div>
@@ -93,9 +93,9 @@ export default function Overview() {
         />
         <KPICard
           title="Total Revenue"
-          value={`₦${(totalRevenue / 1000000).toFixed(1)}M`}
+          value={`GH₵${(totalRevenue / 1000000).toFixed(1)}M`}
           icon={DollarSign}
-          subtitle={`Avg: ₦${(avgMonetary / 1000).toFixed(0)}K`}
+          subtitle={`Avg: GH₵${(avgMonetary / 1000).toFixed(0)}K`}
         />
         <KPICard
           title="Avg Frequency"
@@ -157,10 +157,10 @@ export default function Overview() {
                 <YAxis 
                   stroke="hsl(var(--muted-foreground))"
                   fontSize={12}
-                  tickFormatter={(value) => `₦${(value / 1000000).toFixed(1)}M`}
+                  tickFormatter={(value) => `GH₵${(value / 1000000).toFixed(1)}M`}
                 />
                 <Tooltip 
-                  formatter={(value: number) => [`₦${value.toLocaleString()}`, 'Sales']}
+                  formatter={(value: number) => [`GH₵${value.toLocaleString()}`, 'Sales']}
                   contentStyle={{
                     backgroundColor: 'hsl(var(--card))',
                     border: '1px solid hsl(var(--border))',

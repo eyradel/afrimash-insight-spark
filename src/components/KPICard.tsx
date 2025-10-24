@@ -16,11 +16,11 @@ export function KPICard({ title, value, icon: Icon, trend, subtitle }: KPICardPr
   return (
     <Card>
       <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-        <CardTitle className="text-sm font-medium">{title}</CardTitle>
-        <Icon className="h-4 w-4 text-muted-foreground" />
+        <CardTitle className="text-xs sm:text-sm font-medium">{title}</CardTitle>
+        <Icon className="h-4 w-4 text-muted-foreground shrink-0" />
       </CardHeader>
       <CardContent>
-        <div className="text-2xl font-bold">{value}</div>
+        <div className="text-xl sm:text-2xl font-bold truncate">{value}</div>
         {trend && (
           <p className={`text-xs ${trend.isPositive ? 'text-success' : 'text-destructive'}`}>
             {trend.isPositive ? '+' : ''}{trend.value}% from last month

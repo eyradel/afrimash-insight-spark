@@ -25,13 +25,13 @@ const App = () => (
             <div className="flex min-h-screen w-full">
               <AppSidebar />
               <div className="flex-1 flex flex-col">
-                <header className="sticky top-0 z-10 flex h-16 items-center gap-4 border-b bg-background px-6">
+                <header className="sticky top-0 z-10 flex h-16 items-center gap-2 sm:gap-4 border-b bg-background px-4 sm:px-6">
                   <SidebarTrigger />
-                  <div className="flex-1">
-                    <h1 className="text-lg font-semibold">Afrimash Analytics Hub</h1>
+                  <div className="flex-1 min-w-0">
+                    <h1 className="text-base sm:text-lg font-semibold truncate">Afrimash Analytics Hub</h1>
                   </div>
                 </header>
-                <main className="flex-1 p-6">
+                <main className="flex-1 p-4 sm:p-6">
                   <Routes>
                     <Route path="/" element={<Overview />} />
                     <Route path="/demographics" element={<Demographics />} />

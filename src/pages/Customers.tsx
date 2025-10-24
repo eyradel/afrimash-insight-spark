@@ -71,15 +71,15 @@ export default function Customers() {
   };
 
   return (
-    <div className="space-y-6">
-      <div className="flex items-center justify-between">
+    <div className="space-y-4 sm:space-y-6">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight">Customer Insights</h1>
-          <p className="text-muted-foreground">
+          <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">Customer Insights</h1>
+          <p className="text-sm sm:text-base text-muted-foreground">
             Top customers and personalized recommendations
           </p>
         </div>
-        <Button variant="outline" onClick={() => exportToCSV(data.rfm, 'customers.csv')}>
+        <Button variant="outline" onClick={() => exportToCSV(data.rfm, 'customers.csv')} className="w-full sm:w-auto">
           <Download className="h-4 w-4 mr-2" />
           Export All
         </Button>
@@ -106,7 +106,7 @@ export default function Customers() {
                   {topByRevenue.map((customer) => (
                     <TableRow key={customer.customer_id}>
                       <TableCell className="font-medium">{customer.customer_id}</TableCell>
-                      <TableCell>₦{(customer.monetary / 1000).toFixed(0)}K</TableCell>
+                      <TableCell>GH₵{(customer.monetary / 1000).toFixed(0)}K</TableCell>
                       <TableCell>
                         <Badge className={getSegmentColor(customer.segment)}>
                           {customer.segment}
@@ -221,7 +221,7 @@ export default function Customers() {
                   </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Total Revenue:</span>
-                    <span className="font-medium">₦{customer.monetary.toLocaleString()}</span>
+                    <span className="font-medium">GH₵{customer.monetary.toLocaleString()}</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Total Orders:</span>
@@ -229,7 +229,7 @@ export default function Customers() {
                   </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Avg Order Value:</span>
-                    <span>₦{customer.avg_order_value.toLocaleString()}</span>
+                    <span>GH₵{customer.avg_order_value.toLocaleString()}</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Last Purchase:</span>
