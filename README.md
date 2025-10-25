@@ -1,73 +1,110 @@
-# Welcome to your Lovable project
+# 🌾 Afrimash Insight Spark
 
-## Project info
+**Public Repository:** [https://github.com/eyradel/afrimash-insight-spark](https://github.com/eyradel/afrimash-insight-spark)  
+**Live Deployment:** [https://afrimash-insight-spark.vercel.app](https://afrimash-insight-spark.vercel.app)
 
-**URL**: https://lovable.dev/projects/9bfafa8c-9304-465f-8ecb-30f3a76c5ff1
+---
 
-## How can I edit this code?
+## 🧩 Overview
 
-There are several ways of editing your application.
+**Afrimash Insight Spark** is a data-driven analytics and recommendation platform designed to generate actionable marketing insights for **Afrimash**, an agricultural e-commerce platform serving farmers across Ghana.
 
-**Use Lovable**
+The system integrates **machine learning**, **semantic search**, and **interactive data visualization** to provide:
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/9bfafa8c-9304-465f-8ecb-30f3a76c5ff1) and start prompting.
+- RFM-based customer segmentation  
+- AI-powered churn prediction  
+- Purchase behavior forecasting  
+- Personalized product recommendations  
 
-Changes made via Lovable will be committed automatically to this repo.
+The architecture emphasizes **modularity, scalability, and maintainability**, spanning data engineering, ML model management, API orchestration, and frontend visualization.
 
-**Use your preferred IDE**
+---
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## 🧱 System Architecture
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+The platform follows a modular ML-Ops pipeline (see `System Architechture.png`):
 
-Follow these steps:
+1. **Data Collection** → ETL and ingestion from transactional, API, and cloud sources  
+2. **Data Understanding** → EDA, feature profiling, and correlation analysis  
+3. **Feature Engineering** → Transformations for RFM, product affinity, and seasonality  
+4. **Model Training & Testing** → Predictive modeling and validation  
+5. **Model Evaluation** → Metrics computation and model comparison  
+6. **Model Export** → Serialization (`joblib` / `pickle`)  
+7. **API Wrapping** → Exposed via REST (FastAPI/Flask)  
+8. **Semantic Layer** → Embedding-based semantic search  
+9. **Recommendation System** → Vector search + hybrid filtering  
+10. **Frontend** → Insights dashboard (Next.js + TypeScript)  
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+---
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## 🧮 Data Flow Summary
 
-# Step 3: Install the necessary dependencies.
-npm i
+| **Stage** | **Input** | **Process** | **Output** |
+|------------|------------|-------------|-------------|
+| Data Collection | Raw business data | ETL, data cleaning | Structured dataset |
+| Data Understanding | Processed data | EDA, visualization | Feature insights |
+| Feature Engineering | Clean data | Transformation, scaling | Model-ready dataset |
+| Model Training | Feature dataset | ML algorithm tuning | Trained model |
+| Model Evaluation | Model + test data | Metric computation | Best model |
+| Model Export | Serialized model | API wrapping | REST endpoint |
+| Frontend Integration | APIs | HTTPS calls | Visual dashboards |
+| Recommendation Engine | Vector embeddings | Semantic search | Personalized results |
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+---
 
-**Edit a file directly in GitHub**
+## ⚙️ Technology Stack
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+| **Layer** | **Technology** | **Purpose** |
+|------------|----------------|--------------|
+| **Frontend** | Next.js (React + TypeScript) | Data visualization dashboards |
+| **Backend API** | FastAPI / Flask | Model inference and analytics APIs |
+| **Data Processing** | Python (Pandas, NumPy, Spark) | ETL and feature engineering |
+| **ML Frameworks** | scikit-learn, TensorFlow, XGBoost | Predictive modeling |
+| **Database** | PostgreSQL / BigQuery | Structured data storage |
+| **Cloud** | Google Cloud Platform (GCP) | Hosting and scalability |
+| **Monitoring** | Sentry, Vercel Analytics | Observability and logging |
+| **Security** | JWT, HTTPS, CORS policies | Authentication and protection |
 
-**Use GitHub Codespaces**
+---
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 🧠 Module Descriptions
 
-## What technologies are used for this project?
+### 1. Data Collection
+Collects transactional, marketing, and behavioral data from Afrimash systems and APIs.  
+Supports both **batch** and **real-time** ingestion pipelines.
 
-This project is built with:
+### 2. Data Understanding
+Performs **Exploratory Data Analysis (EDA)**, missing value analysis, and statistical summaries using Python libraries.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### 3. Feature Engineering
+Derives key metrics:
+- **RFM (Recency, Frequency, Monetary)** scores  
+- Product affinity  
+- Purchase frequency trends  
+- Customer segmentation features  
 
-## How can I deploy this project?
+### 4. Model Training and Testing
+Implements supervised ML models:
+- **Churn Prediction:** Logistic Regression / XGBoost  
+- **Segmentation:** K-Means / Hierarchical Clustering  
+- **Recommendation Ranking:** Hybrid collaborative + content filtering  
 
-Simply open [Lovable](https://lovable.dev/projects/9bfafa8c-9304-465f-8ecb-30f3a76c5ff1) and click on Share -> Publish.
+Includes **cross-validation** and **hyperparameter optimization**.
 
-## Can I connect a custom domain to my Lovable project?
+### 5. Model Evaluation
+Evaluates performance using:
+- Accuracy, Precision, Recall, F1-score  
+- ROC-AUC and Confusion Matrix  
+- RMSE/MAE for regression tasks  
 
-Yes, you can!
+### 6. Model Export & Deployment
+Exports best-performing models via `joblib` or `pickle` and wraps them in RESTful APIs using **FastAPI**.  
+Deployed to **Google Cloud Run** or **Firebase Functions**.
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+### 7. API Integration
+All APIs communicate securely over HTTPS.  
+Example endpoints:
+```bash
+/api/metrics
+/api/recommendations
+/api/churn
