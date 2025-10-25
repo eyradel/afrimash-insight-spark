@@ -95,9 +95,9 @@ export default function Overview() {
         />
         <KPICard
           title="Total Revenue"
-          value={`GH₵${(totalRevenue / 1000000).toFixed(1)}M`}
+          value={`₦${(totalRevenue / 1000000).toFixed(1)}M`}
           icon={DollarSign}
-          subtitle={`Avg: GH₵${(avgMonetary / 1000).toFixed(0)}K`}
+          subtitle={`Avg: ₦${(avgMonetary / 1000).toFixed(0)}K`}
         />
         <KPICard
           title="Avg Frequency"
@@ -159,10 +159,10 @@ export default function Overview() {
                 <YAxis 
                   stroke="hsl(var(--muted-foreground))"
                   fontSize={12}
-                  tickFormatter={(value) => `GH₵${(value / 1000000).toFixed(1)}M`}
+                  tickFormatter={(value) => `₦${(value / 1000000).toFixed(1)}M`}
                 />
                 <Tooltip 
-                  formatter={(value: number) => [`GH₵${value.toLocaleString()}`, 'Sales']}
+                  formatter={(value: number) => [`₦${value.toLocaleString()}`, 'Sales']}
                   contentStyle={{
                     backgroundColor: 'hsl(var(--card))',
                     border: '1px solid hsl(var(--border))',

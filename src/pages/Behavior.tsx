@@ -117,12 +117,12 @@ export default function Behavior() {
                 name="Monetary"
                 stroke="hsl(var(--muted-foreground))"
                 fontSize={12}
-                label={{ value: 'Monetary (GH₵ thousands)', angle: -90, position: 'insideLeft' }}
+                label={{ value: 'Monetary (₦ thousands)', angle: -90, position: 'insideLeft' }}
               />
               <Tooltip 
                 cursor={{ strokeDasharray: '3 3' }}
                 formatter={(value: any, name: string) => {
-                  if (name === 'Monetary') return [`GH₵${value}K`, name];
+                  if (name === 'Monetary') return [`₦${value}K`, name];
                   return [value, name];
                 }}
                 contentStyle={{

@@ -221,7 +221,7 @@ export default function Predictions() {
                   value={formData.Monetary}
                   onChange={(e) => handleInputChange("Monetary", e.target.value)}
                 />
-                <p className="text-xs text-muted-foreground">Total monetary value (GH₵)</p>
+                <p className="text-xs text-muted-foreground">Total monetary value (₦)</p>
               </div>
 
               <div className="space-y-2">
@@ -234,7 +234,7 @@ export default function Predictions() {
                   value={formData.Avg_Order_Value}
                   onChange={(e) => handleInputChange("Avg_Order_Value", e.target.value)}
                 />
-                <p className="text-xs text-muted-foreground">Average order value (GH₵)</p>
+                <p className="text-xs text-muted-foreground">Average order value (₦)</p>
               </div>
             </div>
 

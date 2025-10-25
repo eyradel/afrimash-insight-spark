@@ -106,7 +106,7 @@ export default function Customers() {
                   {topByRevenue.map((customer) => (
                     <TableRow key={customer.customer_id}>
                       <TableCell className="font-medium">{customer.customer_id}</TableCell>
-                      <TableCell>GH₵{(customer.monetary / 1000).toFixed(0)}K</TableCell>
+                      <TableCell>₦{(customer.monetary / 1000).toFixed(0)}K</TableCell>
                       <TableCell>
                         <Badge className={getSegmentColor(customer.segment)}>
                           {customer.segment}
@@ -221,7 +221,7 @@ export default function Customers() {
                   </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Total Revenue:</span>
-                    <span className="font-medium">GH₵{customer.monetary.toLocaleString()}</span>
+                    <span className="font-medium">₦{customer.monetary.toLocaleString()}</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Total Orders:</span>
@@ -229,7 +229,7 @@ export default function Customers() {
                   </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Avg Order Value:</span>
-                    <span>GH₵{customer.avg_order_value.toLocaleString()}</span>
+                    <span>₦{customer.avg_order_value.toLocaleString()}</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Last Purchase:</span>
