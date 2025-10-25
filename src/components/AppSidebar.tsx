@@ -1,4 +1,4 @@
-import { LayoutDashboard, Users, TrendingUp, UserSearch } from "lucide-react";
+import { LayoutDashboard, Users, TrendingUp, UserSearch, Brain } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import {
   Sidebar,
@@ -17,6 +17,7 @@ const items = [
   { title: "Demographics", url: "/demographics", icon: Users },
   { title: "Behavior & Retention", url: "/behavior", icon: TrendingUp },
   { title: "Customer Insights", url: "/customers", icon: UserSearch },
+  { title: "AI Predictions", url: "/predictions", icon: Brain },
 ];
 
 export function AppSidebar() {

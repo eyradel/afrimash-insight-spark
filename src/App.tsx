@@ -10,6 +10,7 @@ import Overview from "./pages/Overview";
 import Demographics from "./pages/Demographics";
 import Behavior from "./pages/Behavior";
 import Customers from "./pages/Customers";
+import Predictions from "./pages/Predictions";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -37,6 +38,7 @@ const App = () => (
                     <Route path="/demographics" element={<Demographics />} />
                     <Route path="/behavior" element={<Behavior />} />
                     <Route path="/customers" element={<Customers />} />
+                    <Route path="/predictions" element={<Predictions />} />
                     <Route path="*" element={<NotFound />} />
                   </Routes>
                 </main>
